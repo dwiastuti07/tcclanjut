@@ -153,7 +153,7 @@ Writing objects: 100% (4/4), 404 bytes | 0 bytes/s, done.
 Total 4 (delta 0), reused 0 (delta 0)
 remote:
 remote: Create a pull request for 'add-contributor' on GitHub by visiting:
-remote:      https://github.com/dwiastuti07/tcclanjut-1/pull/new/add-contributo
+remote:      https://github.com/dwiastuti07/tcclanjut-1/pull/new/add-contributor
 remote:
 To https://github.com/dwiastuti07/tcclanjut-1.git
  * [new branch]      add-contributor -> add-contributor

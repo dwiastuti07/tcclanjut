@@ -33,12 +33,12 @@ Kontributor harus mem-*fork* repo *upstream author* sehingga di repo kontributor
 2. Akses repo yang akan di-*fork*: https://github.com/ariefdjodjo/tcclanjut
 3. Pada sisi kanan atas, klik Fork:
 
-![Tombol Fork](images/fork-1.png)
+![Tombol Fork](images/fork_1.png)
 
 4. Pilih akan ditempatkan di account mana.
 5. Setelah proses, repo dari *upstream author* sudah berada di account GitHub kita (kontributor)
 
-![Hasil fork](images/fork-2.png)
+![Hasil fork](images/fork_2.png)
 
 Setelah proses tersebut, clone di komputer lokal:
 
@@ -98,7 +98,7 @@ Sebelum melakukan perubahan, pastikan:
 1. Sudah ada koordinasi secara manual tentang perubahan-perubahan yang akan dilakukan.
 2. Setelah melakukan perubahan-perubahan, pastikan bahwa isi repo lokal tersinkronisasi dengan repo dari *upstream author*.
 3. Kontributor menambah folder minggu-02 :
-![tambah folder](images/minggu-02.png)
+![tambah folder](images/tambah.png)
 4. Isi README.md dari folder minggu-02 :
 
 ```bash

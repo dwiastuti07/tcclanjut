@@ -25,7 +25,7 @@ Perintah di atas digunakan untuk mencari sebuah docker image untuk redis
 
 5. Selanjutnya menjalankan docker image di background dengan mengetikan perintah ```docker run -d redis```
 
-![05] (images/4.PNG)
+![05](images/4.PNG)
 
 6. Setelah menjalankan docker image, untuk melihat container apa saja yang berjalan maka ketikan perintah ```docker ps```
 
@@ -64,4 +64,4 @@ Maksud dari sintaks di atas adalah akan menjalankan container redis di backgroun
 ![013](images/12.PNG)
 
 14. Maka course pertama untuk docer pada katacoda telah selesai
-![014](images/congrats1.PNG)
+![014](images/congrats 1.PNG)

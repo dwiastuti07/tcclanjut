@@ -64,4 +64,4 @@ Maksud dari sintaks di atas adalah akan menjalankan container redis di backgroun
     ![013](images/12.PNG)
 
 14. Maka course pertama untuk docer pada katacoda telah selesai
-    ![014](images/congrats 1.PNG)
+    ![014](images/congrats1.PNG)

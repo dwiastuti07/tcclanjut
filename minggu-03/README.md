@@ -29,13 +29,13 @@ Langkah - Langkah
 
    ![06](images/5.PNG)
 
-terlihat pada gambar di atas informasi lengkap tentang cointainer yang berjalan
+    terlihat pada gambar di atas informasi lengkap tentang cointainer yang berjalan
 
 7. Langkah berikutnya adalah mengexpose container yang sudah berjalan  
 
    ![07](images/6.PNG)
 
-Maksud dari sintaks di atas adalah akan menjalankan container redis di background dengan nama redisHostPort
+    Maksud dari sintaks di atas adalah akan menjalankan container redis di background dengan nama redisHostPort
 
 8. Setelah menggunakan port -p hostport : container port, kali ini akan mencoba mengetikan hanya hostport saja yang diketikan 
 
@@ -71,26 +71,25 @@ Langkah - Langkah
 
 1. Yang harus pertama kali dilakukan adalah membuat dockerfile. Dockerfile digunakan untuk membuat image 
 
-![01](images/nginx_1.png)
+    ![01](images/nginx_1.png)
     
-   Baris pertama mendifiniskan image sedangkan baris ke dua mengcopy content ke lokasi dalam container, sedangkan untuk index.html sendiri isinya adalah 
-   ```<html> Hello World </html>``` 
+    Baris pertama mendifiniskan image sedangkan baris ke dua mengcopy content ke lokasi dalam container, sedangkan untuk index.html sendiri isinya adalah ```<html> Hello World </html>``` 
 
 2. Buat html tersbut menjadi image menggunakan build command
    ```docker build -t webserver-image:v1 .```
    
-3. Periksa image dengan menggunakan ```docker images``
+3. Periksa image dengan menggunakan ```docker images```
 
-![03](images/nginx_2.png)
+    ![03](images/nginx_2.png)
 
 4. Launching image yang telah dibuat menggunakan nama dan tag yang mudah, dan dikarenakan sebagai webserver maka port yang digunakan adalah 80
    ```docker run -d -p 80:80 webserver-image:v1```
 
-5. Akses dengan mengetikan perintah ```curl docker``` hasilnya :
-![05](images/nginx_3.png)
+5. Akses dengan mengetikan perintah ```curl docker``` hasilnya
+    ![05](images/nginx_3.png)
 
-6. Akses juga bisa dilakukan melalui browser sesuai link yang sudah disediakan oleh katacoda maka hasilnya akan seperti di bawah ini :
-![06](images/nginx_4.png)
+6. Akses juga bisa dilakukan melalui browser sesuai link yang sudah disediakan oleh katacoda maka hasilnya akan seperti di bawah ini
+    ![06](images/nginx_4.png)
 
 ## Membuat Container Images
 
@@ -105,20 +104,21 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 
 2. Selanjutnya membuat image dari dockerfile tersebut ```docker build -t my-nginx-image:latest```
-![02](images/build_1.png)
+
+    ![02](images/build_1.png)
 
 3. Image diperiksa apakah sudah ditambahkan dengan image yang dibuat tadi 
-![03](images/build_2.png)
+    ![03](images/build_2.png)
 
 4. Jalankan image agar bisa diakses dengan perintah ```docker run -d -p 80:80 my-nginx-image:latest1```
 
 5. Akses web server dengan perintah ```curl -i http://docker```
 
-![05](images/build_3.png)
+    ![05](images/build_3.png)
 
 6. Periksa container yang sedang berjalan dengna perintah ```docker ps```
 
-![06](images/build_4.png)
+    ![06](images/build_4.png)
 
 Maka Pengenalan docker mulai dari pertama kali mendeploy cointainer sampai membuat image telah selesai.
 

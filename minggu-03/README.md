@@ -86,9 +86,11 @@ Langkah - Langkah
    ```docker run -d -p 80:80 webserver-image:v1```
 
 5. Akses dengan mengetikan perintah ```curl docker``` hasilnya
+    
     ![05](images/nginx_3.png)
 
 6. Akses juga bisa dilakukan melalui browser sesuai link yang sudah disediakan oleh katacoda maka hasilnya akan seperti di bawah ini
+    
     ![06](images/nginx_4.png)
 
 ## Membuat Container Images

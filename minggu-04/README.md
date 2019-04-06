@@ -112,7 +112,7 @@ Langkah - Langkah
     ![10](images/network/10.png)
 
 12. Mengkahiri network
-    Untuk mengakhiri atau memutus hubungan antara redis dan frontened-network maka perintahnya ```docekr network disconnect frontend-network redis``
+    Untuk mengakhiri atau memutus hubungan antara redis dan frontened-network maka perintahnya ```docker network disconnect frontend-network redis```
 
 Selesai sudah contoh koneksi antar container menggunakan network.
 

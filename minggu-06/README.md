@@ -4,21 +4,25 @@
 
 Docker swarm digunakan untuk membantu manajemen docker pada multiple host, dengan menggunakan docker swarm dapat membuat clustering dan juga penjadwalnya. Untuk melihat command - command yang dapat menggunakan perintah di bawah ini 
 
-(images/swarm_1.png)
+![01](images/swarm_1.png)
 
 Langkah - Langkah 
 
-1.  Initialise Swarm Mode 
+##1.  Initialise Swarm Mode 
     
-    ![01](images/swarm_2.png)
+    ![02](images/swarm_2.png)
 
-2.  Defining Settings
+    Command ```docker swar init``` digunakan untuk menginisialisasi docker host menjadi multiple docker host dengan demikian docker engine dapat digunakan untuk clustering dan berlaku sebagai manager. Selain itu command ini akan menghasilkan token yang digunakan untuk menambahkan node ke cluster.
+
+##2.  Join Cluster
     
-    Docker Compose mensupport semua properti yang diperlukan dengan menggunakan ```docker run```
+    Cara mendapatkan token adalah mananyakan ke manager yang sudah berjalan via ``` swarm join-token`` dengan mengetikan command 
 
-    ![03](images/compose_3.png)
+    ![03](images/swarm_3.png)
 
-    ```docker-compose``` membuat link ke container ```redis``` dan akan mengexpose port 3001
+   setelah mendapatkan token dan disimpan pada variabel $token kemudian dapat digunakan untuk mendaftarkan host yang baru sebagai worker. Manager akan menerima node baru yang ditambahkan ke dalam cluster
+
+    ![04](images/swarm_4.png)
     
 3.  Defining Second Container
     

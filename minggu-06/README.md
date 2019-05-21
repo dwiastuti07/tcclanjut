@@ -12,15 +12,15 @@ Langkah - Langkah
     
   ![02](images/swarm_2.png)
 
-    Command ```docker swar init``` digunakan untuk menginisialisasi docker host menjadi multiple docker host dengan demikian docker engine dapat digunakan untuk clustering dan berlaku sebagai manager. Selain itu command ini akan menghasilkan token yang digunakan untuk menambahkan node ke cluster.
+   Command ```docker swar init``` digunakan untuk menginisialisasi docker host menjadi multiple docker host dengan demikian docker engine dapat digunakan untuk clustering dan berlaku sebagai manager. Selain itu command ini akan menghasilkan token yang digunakan untuk menambahkan node ke cluster.
 
 ## 2.  Join Cluster
     
-    Cara mendapatkan token adalah mananyakan ke manager yang sudah berjalan via ``` swarm join-token`` dengan mengetikan command 
+   Cara mendapatkan token adalah mananyakan ke manager yang sudah berjalan via ``` swarm join-token`` dengan mengetikan command 
 
    ![03](images/swarm_3.png)
 
-   setelah mendapatkan token dan disimpan pada variabel $token kemudian dapat digunakan untuk mendaftarkan host yang baru sebagai worker. Manager akan menerima node baru yang ditambahkan ke dalam cluster
+  setelah mendapatkan token dan disimpan pada variabel $token kemudian dapat digunakan untuk mendaftarkan host yang baru sebagai worker. Manager akan menerima node baru yang ditambahkan ke dalam cluster
 
    ![04](images/swarm_4.png)
 
@@ -30,17 +30,17 @@ Langkah - Langkah
 
 ## 3.  Create Overlay Network
     
-    Overlay network dibuat agar container - container pada host yang lain dapat saling berkomunikasi. Virutal Extensible Lan (VXLAN) dirancang untuk cloud skala besar.
+   Overlay network dibuat agar container - container pada host yang lain dapat saling berkomunikasi. Virutal Extensible Lan (VXLAN) dirancang untuk cloud skala besar.
 
    ![06](images/swarm_6.png)
 
-    Command di atas akan membuat overlay network baru dengan nama skynet. Semua containers yang terhubung ke network ini dapat saling berkomunikasi.
+   Command di atas akan membuat overlay network baru dengan nama skynet. Semua containers yang terhubung ke network ini dapat saling berkomunikasi.
 
 ## 4.  Deploy Service
     
    ![07](images/swarm_7.png)
 
-    Pada contoh ini docker image dibuat network skynet baru dengan nama katacoda/docker-http-server. Didefinisikan nama service adalah http kemudian di replica menjadi dua service setelah itu dilakukan load balance untuk service tersebut yang berjalan di port 80. Dengan demikian node yang menerima request bukan node yang menerima, akan tetapi docker load balances melakukan request ke semua container yang tersedia di dalam cluster.
+   Pada contoh ini docker image dibuat network skynet baru dengan nama katacoda/docker-http-server. Didefinisikan nama service adalah http kemudian di replica menjadi dua service setelah itu dilakukan load balance untuk service tersebut yang berjalan di port 80. Dengan demikian node yang menerima request bukan node yang menerima, akan tetapi docker load balances melakukan request ke semua container yang tersedia di dalam cluster.
    Untuk memeriksa apakah service dapat menggunakan command ``docker service ls``
 
    ![08](images/swarm_8.png)

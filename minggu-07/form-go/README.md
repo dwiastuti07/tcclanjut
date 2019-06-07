@@ -57,9 +57,11 @@ http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 ```
 Kemudian akan dieksekusi dengan code ```tmpl.Execute(w, struct{ Success bool }{true})```.
 Untuk kali ini port yang akan digunakan adalah 8080 sehingga untuk mengakses forms tersebut diketikan pada browser ```http://localhost:8080/forms```
+
 ![2](images/2.png)
 
 dan diketikan pada tag input
+
 ![3](images/3.png)
 
 Setelah disubmit hasilnya 

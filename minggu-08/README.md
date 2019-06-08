@@ -99,7 +99,8 @@ spec:
         ports:
         - containerPort: 80
 ```
-Kemudian di-deploy dengan menggunkan perintah :
+Kemudian di-deploy dengan menggunakan perintah :
+
 ![1](images/yaml/1.png)
 
 container webapp1 sudah di-deploy sesuai dengan yang diketikan pada file `deployment.yaml`. dan untuk memastikan deployment berjalan dapat menggunakan perintah `kubectl get deployment`

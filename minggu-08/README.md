@@ -75,3 +75,100 @@ Kemudian test mengunggankan perintah `curl`
 
 ![15](images/15.png)
 
+## Deploy Container Using YAML Definitions
+Salah satu yang paling umum pada object kubernets adalah deployment objectnya. Deployment object menjelaskan spesifikasi container yang diinginkan, berserta nama dan label yang digunakan dari bagian lain kubernets untuk saling terkoneksi. Semua object - object yang diinginkan dalam disimpan sebuah file `yaml`. 
+
+1. Create Deployment
+Buat sebuah file `yaml` dengan nama `deployment.yaml` :
+
+```bash
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webapp1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: webapp1
+    spec:
+      containers:
+      - name: webapp1
+        image: katacoda/docker-http-server:latest
+        ports:
+        - containerPort: 80
+```
+Kemudian di-deploy dengan menggunkan perintah :
+![1](images/yaml/1.png)
+
+container webapp1 sudah di-deploy sesuai dengan yang diketikan pada file `deployment.yaml`. dan untuk memastikan deployment berjalan dapat menggunakan perintah `kubectl get deployment`
+
+![2](images/yaml/2.png)
+
+Sedangkan untuk melihat secara rinci dapat menggunakan perintah `kubetcl describe deployment webapp1`
+
+![3](images/yaml/3.png)
+
+2. Create Service
+Kubernets mempunyai kapasitas networking yang powerful yang mengontrol bagaimana aplikasi saling berkomunikasi. Konfigurasi networking dapat juga dikontrol melalui YAML, untuk itu dibuat sebuah file `service.yaml` :
+
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp1-svc
+  labels:
+    app: webapp1
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 30080
+  selector:
+    app: webapp1
+```
+
+Delpoy service dengan menggunakan perintah `kubectl create -f service.yaml`
+
+![4](images/yaml/4.png)
+
+Untuk melihat diskripsi tentang service dapat menggunakan perintah `kubetcl get svc`
+
+![5](images/yaml/5.png)
+
+Sedangkan untuk melihat informasi lebih detail dapat dilakukan seperti gambar di bawah ini :
+
+![6](images/yaml/6.png)
+
+Test dengan menggunakan perintah `curl`
+
+![7](images/yaml/7.png)
+
+3. Scale Deployment
+
+Untuk menambahkan service maka dapat mengubah isi pada file `deployment.yaml` yaitu dengan mengubah jumlah replicas yang tadinya `replicas : 1` menjadi `replicas : 4` setelah mengubahnya deploy ulang dengan perintah `kubetcl apply -f deployment.yaml`
+
+![8](images/yaml/8.png)
+
+Periksa jumlah replika dengan perintah `kubetcl get deployment `
+
+![9](images/yaml/9.png)
+
+Periksa jumlah pods
+
+![10](images/yaml/10.png)
+
+Test menggunakan perintah `curl`
+
+![11](images/yaml/11.png)
+
+
+## Dwast
+
+
+
+
+
+
+

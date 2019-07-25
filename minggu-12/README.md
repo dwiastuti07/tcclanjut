@@ -1,5 +1,5 @@
-##minggu-12
-#Hadoop MapReduce
+## minggu-12
+# Hadoop MapReduce
 
 
 Code Program :
@@ -82,7 +82,7 @@ public class ProcessUnits {
 } 
 ```
 
-##Dwast
+## Dwast
 
 
 
